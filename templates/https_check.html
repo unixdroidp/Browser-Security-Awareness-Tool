@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTPS Security Check - Browser Security Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>🔒 HTTPS Security Check</h1>
+            <div class="brand">Powered by UnixDroid</div>
+        </header>
+
+        <main>
+            <div class="info-box">
+                <h3>🔍 What is HTTPS?</h3>
+                <p>HTTPS (HyperText Transfer Protocol Secure) is an internet communication protocol that protects the integrity and confidentiality of data between the user's computer and the site.</p>
+            </div>
+
+            <form method="POST" class="check-form">
+                <div class="form-group">
+                    <label for="url">Enter Website URL to Check:</label>
+                    <input type="text" id="url" name="url" placeholder="https://example.com" required>
+                </div>
+                <button type="submit" class="check-button">🔍 Check Security</button>
+            </form>
+
+            {% if result %}
+            <div class="result-display {% if 'SECURE' in result %}success-result{% else %}danger-result{% endif %}">
+                <h3>📊 Check Result</h3>
+                <p class="result-text">{{ result }}</p>
+                {% if 'SECURE' in result %}
+                <div class="security-tips">
+                    <h4>✅ Your connection is secure!</h4>
+                    <ul>
+                        <li>Data is encrypted in transit</li>
+                        <li>Identity of the website is verified</li>
+                        <li>Protection against man-in-the-middle attacks</li>
+                    </ul>
+                </div>
+                {% else %}
+                <div class="security-warning">
+                    <h4>⚠️ Security Risk Detected!</h4>
+                    <ul>
+                        <li>Data transmitted in plain text</li>
+                        <li>Vulnerable to interception</li>
+                        <li>Cannot verify website identity</li>
+                    </ul>
+                    <p><strong>Recommendation:</strong> Always use HTTPS websites and avoid entering sensitive information on HTTP sites.</p>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <div class="info-box">
+                <h3>💡 Why HTTPS Matters</h3>
+                <div class="https-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🔐</span>
+                        <h4>Encryption</h4>
+                        <p>Protects your data from being intercepted</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <h4>Authentication</h4>
+                        <p>Verifies you're connecting to the right site</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🛡️</span>
+                        <h4>Integrity</h4>
+                        <p>Ensures data isn't modified in transit</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="/" class="nav-back">← Back to Home</a>
+        </nav>
+
+        <footer class="footer">
+            © 2025 UnixDroid | Cyber Security Awareness Project
+        </footer>
+    </div>
+</body>
+</html>

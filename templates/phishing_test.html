@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Test - Browser Security Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>🎣 Phishing Awareness Test</h1>
+            <div class="brand">Powered by UnixDroid</div>
+        </header>
+
+        <main>
+            <div class="info-box">
+                <h3>🎯 What is Phishing?</h3>
+                <p>Phishing is a cyber attack where attackers try to trick you into giving sensitive information by pretending to be a trustworthy entity.</p>
+            </div>
+
+            <form method="POST" class="quiz-form">
+                <div class="quiz-instructions">
+                    <h3>📝 Test Your Knowledge</h3>
+                    <p>Identify whether each scenario is a phishing attempt or legitimate communication. Choose wisely!</p>
+                </div>
+
+                <div class="question-card">
+                    <h4>Q1: You receive an email saying "Your account is blocked. Click here to verify."</h4>
+                    <div class="options">
+                        <label class="option phishing-option">
+                            <input type="radio" name="q0" value="phishing" required>
+                            <span class="option-text">🎣 Phishing - Urgency tactics are common in scams</span>
+                        </label>
+                        <label class="option legit-option">
+                            <input type="radio" name="q0" value="legit">
+                            <span class="option-text">✅ Legitimate - Banks do send security alerts</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>Q2: You get a notification "Your Amazon order has been shipped."</h4>
+                    <div class="options">
+                        <label class="option phishing-option">
+                            <input type="radio" name="q1" value="phishing" required>
+                            <span class="option-text">🎣 Phishing - Could be fake shipping notification</span>
+                        </label>
+                        <label class="option legit-option">
+                            <input type="radio" name="q1" value="legit">
+                            <span class="option-text">✅ Legitimate - Amazon sends real shipping updates</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h4>Q3: Email subject: "Urgent! Reset your password now."</h4>
+                    <div class="options">
+                        <label class="option phishing-option">
+                            <input type="radio" name="q2" value="phishing" required>
+                            <span class="option-text">🎣 Phishing - Creates panic to make you act quickly</span>
+                        </label>
+                        <label class="option legit-option">
+                            <input type="radio" name="q2" value="legit">
+                            <span class="option-text">✅ Legitimate - Companies do request password resets</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-quiz">📊 Submit Answers</button>
+            </form>
+
+            <div class="info-box warning-box">
+                <h3>🚨 Common Phishing Signs</h3>
+                <div class="phishing-signs">
+                    <div class="sign-item">
+                        <span class="sign-icon">⚡</span>
+                        <strong>Urgency:</strong> "Act now or lose access!"
+                    </div>
+                    <div class="sign-item">
+                        <span class="sign-icon">🎭</span>
+                        <strong>Impersonation:</strong> Fake sender addresses
+                    </div>
+                    <div class="sign-item">
+                        <span class="sign-icon">🔗</span>
+                        <strong>Suspicious Links:</strong> Hover to check URLs
+                    </div>
+                    <div class="sign-item">
+                        <span class="sign-icon">📧</span>
+                        <strong>Generic Greetings:</strong> "Dear User" instead of your name
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="/" class="nav-back">← Back to Home</a>
+        </nav>
+
+        <footer class="footer">
+            © 2025 UnixDroid | Cyber Security Awareness Project
+        </footer>
+    </div>
+</body>
+</html>

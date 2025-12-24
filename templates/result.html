@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results - Browser Security Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>📊 Quiz Results</h1>
+            <div class="brand">Powered by UnixDroid</div>
+        </header>
+
+        <main>
+            <div class="result-card {% if score >= 2 %}success-card{% else %}warning-card{% endif %}">
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span class="score-number">{{ score }}</span>
+                        <span class="score-total">/ 3</span>
+                    </div>
+                    <h2 class="score-title">
+                        {% if score == 3 %}
+                        🏆 Perfect Score!
+                        {% elif score == 2 %}
+                        🎉 Great Job!
+                        {% elif score == 1 %}
+                        📚 Keep Learning!
+                        {% else %}
+                        🎓 Time to Study!
+                        {% endif %}
+                    </h2>
+                </div>
+
+                <div class="status-badge {% if score >= 2 %}cyber-aware{% else %}needs-training{% endif %}">
+                    {% if score >= 2 %}
+                    <span class="status-icon">✅</span>
+                    <span class="status-text">Cyber Aware User</span>
+                    {% else %}
+                    <span class="status-icon">⚠️</span>
+                    <span class="status-text">Needs Awareness Training</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="result-analysis">
+                {% if score == 3 %}
+                <div class="analysis-card perfect">
+                    <h3>🌟 Outstanding Performance!</h3>
+                    <p>You have excellent knowledge of phishing awareness. Keep up the great work in maintaining your cybersecurity practices!</p>
+                    <ul class="achievements">
+                        <li>✅ Identified all phishing attempts correctly</li>
+                        <li>✅ Understand urgency tactics in scams</li>
+                        <li>✅ Recognize legitimate communications</li>
+                    </ul>
+                </div>
+                {% elif score == 2 %}
+                <div class="analysis-card good">
+                    <h3>🎯 Good Understanding</h3>
+                    <p>You have a solid grasp of phishing concepts. There's always room for improvement in staying vigilant online.</p>
+                    <ul class="achievements">
+                        <li>✅ Most phishing attempts identified</li>
+                        <li>📚 Review the missed questions</li>
+                        <li>🛡️ Continue practicing safe browsing</li>
+                    </ul>
+                </div>
+                {% else %}
+                <div class="analysis-card needs-improvement">
+                    <h3>📖 Learning Opportunity</h3>
+                    <p>Phishing awareness is crucial in today's digital world. Let's work on improving your ability to spot suspicious communications.</p>
+                    <ul class="recommendations">
+                        <li>📚 Review phishing signs and common tactics</li>
+                        <li>🔍 Always verify sender information</li>
+                        <li>⚡ Avoid clicking urgent or suspicious links</li>
+                        <li>📞 Contact companies directly through official channels</li>
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="next-steps">
+                <h3>🚀 What's Next?</h3>
+                <div class="action-buttons">
+                    <a href="/phishing-test" class="action-btn retry">🔄 Retake Quiz</a>
+                    <a href="/password-awareness" class="action-btn learn-more">📖 Learn More</a>
+                    <a href="/https-check" class="action-btn practice">🔒 Practice HTTPS</a>
+                    <a href="/" class="action-btn home">🏠 Back to Home</a>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>💡 Remember</h3>
+                <p>Cybersecurity is an ongoing learning process. Stay informed, stay vigilant, and stay safe online!</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            © 2025 UnixDroid | Cyber Security Awareness Project
+        </footer>
+    </div>
+</body>
+</html>
