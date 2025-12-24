@@ -1,4 +1,3 @@
-# Browser-Security-Awareness-Tool
 # 🔐 Browser Security Awareness Tool  
 ### Powered by UnixDroid
 
@@ -52,22 +51,6 @@ India
 - **Styling:** Basic CSS  
 - **Type:** Web-based Educational Tool  
 
----
-
-## 📁 Project Structure
-browser_security_tool/
-│
-├── app.py
-│
-├── templates/
-│ ├── index.html
-│ ├── password_awareness.html
-│ ├── https_check.html
-│ ├── phishing_test.html
-│ └── result.html
-│
-└── static/
-└── style.css
 
 yaml
 Copy code
